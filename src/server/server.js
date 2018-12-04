@@ -40,7 +40,7 @@ app.delete('/killCat',
 
 app.listen(PORT, (err) => {
   if (err) console.log(err);
-  else console.log(`Server listening or Port:${PORT} ...`)
+  else console.log(`Server listening on Port:${PORT} ...`)
 })
 
 // module.exports = server;

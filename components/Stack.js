@@ -21,7 +21,7 @@ export default class Stack extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://192.168.0.89:5000/cats')
+    axios.get('http://10.0.1.55:5000/cats')
     .then((response) => response.data)
     .then((cats) => {
       this.setState({ cats: cats })
@@ -32,8 +32,14 @@ export default class Stack extends React.Component {
   
   render() {
     const cards = this.state.cats.map((cat) => {
-      // console.log(cat)
-      return <Card key={cat.id} url={cat.image_url} name={cat.cat_name} gen={cat.gen} like={this.handleToggleLike}/>;
+      return (
+        <Card 
+          key={cat.id} 
+          url={cat.image_url} 
+          name={cat.cat_name} 
+          gen={cat.gen} 
+          like={this.handleToggleLike}/>
+      )
     });
     return (
       <ScrollView       
